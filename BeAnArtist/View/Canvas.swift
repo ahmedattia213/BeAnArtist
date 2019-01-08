@@ -11,36 +11,38 @@ import UIKit
 class Canvas: UIView {
     
     
-    var lines = [[CGPoint]]()
+    fileprivate var strokeColor  = UIColor.red
+    fileprivate var strokeWidth : Float = 8
+    fileprivate var lines = [Line]()
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
         guard let context = UIGraphicsGetCurrentContext() else
         { return }
-        context.setStrokeColor(#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1))
-        context.setLineCap(.butt)
-        context.setLineWidth(8)
-        // lines are 2D array of lines
-        // and a signle line is array of points to make up this line
-        // we take the first point as our starting point
-        // last point as our ending point
+        
         
         lines.forEach { (line) in
-            for (i,p) in line.enumerated() {
+            for (i,p) in line.points.enumerated(){
+                context.setLineWidth(CGFloat(line.strokeWidth))
+                context.setStrokeColor(line.color.cgColor)
+                context.setLineCap(.round)
                 if i == 0 {
                     context.move(to: p)
                 } else {
                     context.addLine(to: p)
+                    
                 }
+                
             }
-        }        
-        context.strokePath()
+            context.strokePath()
+        }
+        
     }
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        lines.append([CGPoint]())
+        lines.append(Line.init(strokeWidth: strokeWidth, color: strokeColor, points: []))
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -48,18 +50,23 @@ class Canvas: UIView {
         { return }
         //   print("(\(Int(point.x)),\(Int(point.y)))")
         guard var lastline = lines.popLast() else { return }
-        lastline.append(point)
+        lastline.points.append(point)
         lines.append(lastline)
         setNeedsDisplay()
     }
     
     func undo(){
-       _ = lines.popLast()
+        _ = lines.popLast()
         setNeedsDisplay()
     }
     func clear(){
         lines.removeAll()
         setNeedsDisplay()
     }
-    
+    func setStrokeColor(color : UIColor){
+        self.strokeColor = color
+    }
+    func setStrokeWidth(width : Float){
+        strokeWidth = width
+    }
 }
