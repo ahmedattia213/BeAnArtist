@@ -74,11 +74,38 @@ class ViewController: UIViewController {
     override func loadView() {
         self.view = canvas
     }
+    
     @objc fileprivate func handleColorChange(button : UIButton){
+        handleButtonHighlighting(button: button)
         canvas.setStrokeColor(color: button.backgroundColor ?? .black)
     }
-
     
+    func handleButtonHighlighting(button: UIButton){
+        if button == redButton {
+            highlightButton(button: button)
+            defaultButton(button: blueButton)
+            defaultButton(button: yellowButton)
+        } else if button == blueButton {
+            highlightButton(button: button)
+            defaultButton(button: redButton)
+            defaultButton(button: yellowButton)
+        } else {
+            highlightButton(button: button)
+            defaultButton(button: redButton)
+            defaultButton(button: blueButton)
+        }
+    }
+    
+    func highlightButton( button: UIButton) {
+        button.layer.borderWidth = 4
+        button.layer.cornerRadius = 2
+        button.layer.borderColor = UIColor.black.cgColor
+    }
+    
+    func defaultButton (button: UIButton){
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 0
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,8 +128,6 @@ class ViewController: UIViewController {
         stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor , constant: -10).isActive = true
         stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor , constant: -10).isActive = true
-        
-        
         
     }
     

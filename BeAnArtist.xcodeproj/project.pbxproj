@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C521407D21E3FE0D005E43A9 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = C521407C21E3FE0D005E43A9 /* Canvas.swift */; };
 		C521408221E5414E005E43A9 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = C521408121E5414E005E43A9 /* Line.swift */; };
-		C521408721E54ACF005E43A9 /* BeAnArtist480.gif in Resources */ = {isa = PBXBuildFile; fileRef = C521408621E54ACF005E43A9 /* BeAnArtist480.gif */; };
 		C5F8E4E021E3DD6200931F8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F8E4DF21E3DD6200931F8C /* AppDelegate.swift */; };
 		C5F8E4E221E3DD6200931F8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F8E4E121E3DD6200931F8C /* ViewController.swift */; };
 		C5F8E4E521E3DD6200931F8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5F8E4E321E3DD6200931F8C /* Main.storyboard */; };
@@ -20,7 +19,6 @@
 /* Begin PBXFileReference section */
 		C521407C21E3FE0D005E43A9 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		C521408121E5414E005E43A9 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
-		C521408621E54ACF005E43A9 /* BeAnArtist480.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BeAnArtist480.gif; sourceTree = "<group>"; };
 		C5F8E4DC21E3DD6200931F8C /* BeAnArtist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeAnArtist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F8E4DF21E3DD6200931F8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5F8E4E121E3DD6200931F8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 		C521408321E5415E005E43A9 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				C521408621E54ACF005E43A9 /* BeAnArtist480.gif */,
 				C5F8E4EB21E3DD6700931F8C /* LaunchScreen.storyboard */,
 				C5F8E4E921E3DD6700931F8C /* Assets.xcassets */,
 			);
@@ -165,7 +162,6 @@
 			files = (
 				C5F8E4ED21E3DD6700931F8C /* LaunchScreen.storyboard in Resources */,
 				C5F8E4EA21E3DD6700931F8C /* Assets.xcassets in Resources */,
-				C521408721E54ACF005E43A9 /* BeAnArtist480.gif in Resources */,
 				C5F8E4E521E3DD6200931F8C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
